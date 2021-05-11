@@ -1,8 +1,9 @@
 <%- include('partials/h-user.ejs') %>
 
 <br>
-<h1>Top Thai</h1>
-
+<i><h2>Top Thai</h2></i>
+<hr width="100%  size="50px" color="red" align="center">
+<!-- 
 <div class="container-total">
   <div class="container-movies">
     <h2>Ant-Man<br>Lançamento: 2015</h2>
@@ -16,7 +17,73 @@
       <a href="/artist/music" >
         <img src="https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Ant-Man">
       </a>
-    </div>
-  
+    </div> --> 
+<div class="artist">
+  <% collection.forEach(function(collection){ %>
+    <figure class="snip1281 yellow">
+      <img src="<%= collection.imageArt %>" alt="sample22" height="170px" width="500px"/>
+      <figcaption>
+        <h2><%= collection.artist %></h2>
+      </figcaption>
+      <a href="/artist/music"></a>
+    </figure>
+  <% }); %>
 
+    <!-- <figure class="snip1281 blue">
+      <img src="https://www.songdee.com/wp-content/uploads/2021/02/%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%AD%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%A7%E0%B8%A3%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A3-INK-WARUNTORN-380x220.jpg" alt="sample69" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Bailey Wonger</h2><span>Artist</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+
+    <figure class="snip1281 yellow">
+      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Gordon Norman</h2><span>Musician</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+
+    <figure class="snip1281 red">
+      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Gordon Norman</h2><span>Musician</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+    <figure class="snip1281 yellow">
+      <img src="https://i.ytimg.com/vi/9IohfkrRymw/maxresdefault.jpg" alt="sample22" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Gordon Norman</h2><span>Musician</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+
+    <figure class="snip1281 blue">
+      <img src="https://www.songdee.com/wp-content/uploads/2021/02/%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%AD%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%A7%E0%B8%A3%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A3-INK-WARUNTORN-380x220.jpg" alt="sample69" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Bailey Wonger</h2><span>Artist</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+
+    <figure class="snip1281 yellow">
+      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Gordon Norman</h2><span>Musician</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+
+    <figure class="snip1281 red">
+      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
+      <figcaption>
+        <h2>Gordon Norman</h2><span>Musician</span>
+      </figcaption>
+      <a href="#"></a>
+    </figure> -->
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
 <%- include('partials/footer.ejs') %>

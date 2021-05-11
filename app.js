@@ -2,12 +2,12 @@ const   express         = require('express'),
         app             = express(),
         bodyParser      = require('body-parser'),
         mongoose        = require('mongoose'),
-        Slide           = require('./models/slide'),
-        Collection      = require('./models/collection'),
         seedDB          = require('./seeds'),
         passport        = require('passport'),
         LocalStrategy   = require('passport-local'),
         User            = require('./models/user'),
+        Slide           = require('./models/slide'),
+        Collection      = require('./models/collection'),
         Schema          = mongoose.Schema;
 
 mongoose.connect('mongodb://localhost/uCollectionV3');
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + 'public'));
-//seedDB();
+seedDB();
 
 // Collection.create(
 //     {
@@ -53,6 +53,7 @@ app.use(function(req,res,next){
     next();
 });
 
+
 app.get('/', function(req, res){
     Slide.find({}, function(err, allSlide){
         if(err){
@@ -64,7 +65,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
-    var img = req.body.image;
+    var image = req.body.image;
     var newSlide = {image: image};
     Slide.create(newSlide, function(err, newlyCreated){
         if(err){
@@ -74,6 +75,51 @@ app.post('/', function(req, res){
         }
     });
 });
+
+app.get('/artist', function(req, res){
+    Collection.find({}, function(err, allCollection){
+        if(err){
+            console.log(err);
+        } else{
+            res.render('artist.ejs', {collection: allCollection});
+        }
+    });
+});
+
+app.post('/artist', function(req, res){
+    var artist = req.body.artist;
+    var imageArt = req.body.imageArt;
+    var newCollcetion = {artist: artist, imageArt: imageArt};
+    Collection.create(newCollection, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            res.redirect('/artist');
+        }
+    });
+});
+
+// app.get('/', function(req, res){
+//     Slide.find({}, function(err, allSlide){
+//         if(err){
+//             console.log(err);
+//         } else{
+//             res.render('home.ejs', {slide: allSlide});
+//         }
+//     });
+// });
+
+// app.post('/', function(req, res){
+//     var image = req.body.image;
+//     var newSlide = {image: image};
+//     Slide.create(newSlide, function(err, newlyCreated){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             res.redirect('/');
+//         }
+//     });
+// });
 
 // app.get('/admin', function(req, res){
 //     res.render('admin.ejs', {admin: admin});
@@ -96,23 +142,21 @@ app.get('/', function(req, res){
     res.render('home.ejs');
 });
 
+app.get('/artist', function(req, res){
+    res.render('artist.ejs');
+});
 
+app.get('/artist/music',  function(req, res){
+    res.render('music.ejs');
+});
 
-// app.get('/artist', function(req, res){
-//     res.render('artist.ejs');
-// });
+app.get('/artist/music/melody', isLoggedIn, function(req, res){
+    res.render('member/melody.ejs');
+});
 
-// app.get('/artist/music', function(req, res){
-//     res.render('music.ejs');
-// });
-
-// app.get('/artist/music/melody', function(req, res){
-//     res.render('member/melody.ejs');
-// });
-
-// app.get('/contact', function(req, res){
-//     res.render('contact.ejs');
-// });
+app.get('/contact', function(req, res){
+    res.render('contact.ejs');
+});
 
 app.get('/login', function(req, res){
     res.render('login.ejs');
@@ -122,7 +166,7 @@ app.post('/login', passport.authenticate('local',
     {
         successRedirect: '/',
         failureRedirect: '/login'
-    }), function(res, res) {
+    }), function(req, res) {
 });
 
 app.get('/register', function(req, res){
@@ -134,43 +178,42 @@ app.post('/register', function(req, res){
     User.register(newUser, req.body.password, function(err, user){
         if(err) {
             console.log(err);
-            return res.render('register.ejs');
+            return res.render('register');
         }
         passport.authenticate('local')(req, res, function(){
-            res.render('/');
+            res.redirect('/');
         });
     });
 });
 
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    } else {
+        res.redirect('/login');
+    }
+}
 
-// app.get('/signup', function(req, res){
-//     res.render('signup.ejs');
-// });
+app.get('/playlist', isLoggedIn, function(req, res){
+    res.render('playlist.ejs');
+});
 
-// app.post('/signup', function(req, res){
-//     var newUser = new User({username: req.body.username});
-//     User.signup(newUser, req.body.password, function(err, user){
-//         if(err) {
-//             console.log(err);
-//             return res.render('signup');
-//         }
-//         passport.authenticate('local')(req, res, function(){
-//             res.redirect('/');
-//         });
-//     });
-// });
+app.get('/artist/music/payment', isLoggedIn, function(req, res){
+    res.render('/member/payment.ejs');
+});
 
 // app.get('/admin', function(req, res){
-//     res.render('admin/admin.ejs');
+//     res.render('admin/admin.ejs'); 
 // });
 
 // app.get('/add', function(req, res){
 //     res.render('admin/add.ejs');
 // });
 
-// app.get('/payment', function(req, res){
-//     res.render('member/payment.ejs');
-// });
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+})
 
 app.listen('3000', function(req, res){
     console.log('Server is running');
