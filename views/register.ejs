@@ -1,0 +1,34 @@
+<%- include('partials/herder-register.ejs') %>
+<div class="login-form">
+  <from action="/register" method='POST'>
+    <div id="img_container">
+        <img src="https://i.pinimg.com/originals/f8/9a/e1/f89ae15e25a2130d2811cedbe03bdefa.png" />
+    </div>
+    <br><p><b><i>Sing up for ciambella account.</p1></b></i>
+    <div class="form-group ">
+      <input type="text" class="form-control"  name='username' placeholder="Username ">
+      <i class="fa fa-user"></i>
+    </div>
+
+    <!-- <div class="form-group log-status">
+        <input type="text" class="form-control" name='email' placeholder="Email" >
+        <i class="fa fa-envelope"></i>
+    </div> -->
+
+    <div class="form-group log-status">
+      <input type="password" class="form-control" name='password' placeholder="Password">
+      <i class="fa fa-lock"></i>
+    </div>
+    
+    <!-- <div class="form-group log-status">
+        <input type="password" class="form-control" name='comment[pass]' placeholder="Retype Password" >
+        <i class="fa fa-lock"></i>
+    </div> -->
+
+    <input type="submit" class="log-btn" value="SIGNUP">
+    <a href="/"><button type="button" class="log-btn" >SIGN UP</button></a>
+    <br><br><p>Already on Ciambella?        
+    <a class="link-1" href="/login">Log in</a></p>
+  </from>
+</div>
+<%- include('partials/footer.ejs') %>

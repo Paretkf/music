@@ -1,0 +1,30 @@
+<%- include('partials/h-admin.ejs') %>
+
+<br>
+<h3>ARTIST / MUSIC  
+    <a href='/admin/add'>
+        <i class="fa fa-plus-square"  aria-hidden="true" href="#" >   
+        </i>
+    </a>
+</h3>
+<hr width="70%" ><br>
+
+
+<div class="container-total">
+  
+  <% admin.forEach(function(admin){ %>
+  <div class="container-movies">
+    <h2>Ant-Man<br>Lançamento: 2015</h2>
+    <a href="#" target="_blank">
+      <img src='<%= admin.image %>' height="250px" width="180px">
+    </a>
+    <h6><%= admin.name %></h6>
+  </div>
+  <% }); %>
+
+</div> 
+    
+  
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<%- include('partials/footer.ejs') %>

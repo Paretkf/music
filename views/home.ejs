@@ -1,0 +1,709 @@
+<%- include('partials/h-user.ejs') %>
+<div class="bg-dark" style="padding: 10 0;">
+    <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
+        <div class="carousel-inner">
+            <% slide.forEach(function(slide){ %>
+                <div class="<%= slide.class%>">
+                    <img src="<%= slide.image %>" class="d-block w-100 image-slide" />
+                </div>
+                <% }); %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div style="padding: 20 0; background: #729086;">
+    <h4 class="text-center text-white">ชาร์ตเพลงฮิต</h4>
+    <p class="text-center text-white">เช็คอันดับเพลงฮิตประจำสัปดาห์ได้ก่อนใคร ดาวน์โหลดเพลงฮิตจากชาร์ตเพลง The Ciambella Top 100 อัพเดทเพลงใหม่</p>
+</div>
+
+<div style="background-image: url('./images/background.jpg');">
+    <div class="container">
+        <div style="padding: 20 0;">
+            <h5 class="text-center" style="color: #97918b;">Top 20</h5>
+            <!-- <h6 class="text-center" style="color: #97918b;">Update March 15, 2021</h6> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div>
+                    <img src="./images/music3.jpg" class="img-fluid" />
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">1</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music3.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>Ice Cream</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>BLACKPINK (with Selena Gomez)</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>9K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">2</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music2.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>สองใจ</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>ดา เอ็นโดรฟิน</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>7K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">3</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music3.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>Ice Cream</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>BLACKPINK (with Selena Gomez)</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>5K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">4</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music2.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>สองใจ</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>ดา เอ็นโดรฟิน</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>3K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">5</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music3.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>Ice Cream</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>BLACKPINK (with Selena Gomez)</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>1K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">6</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music2.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>สองใจ</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>ดา เอ็นโดรฟิน</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>800</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">7</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music1.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>ฝนตกไหม</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>Three Man Down</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>8K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">8</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music4.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>At My Worst</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>Pink Sweat$</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>6K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">9</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music1.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>ฝนตกไหม</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>Three Man Down</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>4K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">10</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music4.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>At My Worst</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>Pink Sweat$</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>2K</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">11</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music1.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>ฝนตกไหม</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>Three Man Down</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>900</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 align-self-center">
+                        <div>
+                            <h1 class="text-center text-white">12</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="./images/music4.jpg" class="img-fluid w-100 image-item" />
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md truncate-text" style="color: #73565e">
+                                <strong>At My Worst</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white truncate-text">
+                                <strong>Pink Sweat$</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md text-white">
+                                <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                    <i class="fas fa-user-friends"></i>
+                                </button> <strong>700</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a style="color: #97918b" data-mdb-toggle="collapse" href="#readmore" role="button" aria-expanded="false" aria-controls="readmore">Read More..</a>
+        </div>
+
+        <div class="collapse mt-3" id="readmore">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">13</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music3.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>Ice Cream</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>BLACKPINK (with Selena Gomez)</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>9K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">14</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music2.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>สองใจ</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>ดา เอ็นโดรฟิน</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>7K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">15</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music3.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>Ice Cream</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>BLACKPINK (with Selena Gomez)</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>5K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">16</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music2.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>สองใจ</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>ดา เอ็นโดรฟิน</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>3K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">17</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music1.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>ฝนตกไหม</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>Three Man Down</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>8K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">18</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music4.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>At My Worst</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>Pink Sweat$</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>6K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">19</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music1.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>ฝนตกไหม</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>Three Man Down</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>4K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h1 class="text-center text-white">20</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <img src="./images/music4.jpg" class="img-fluid w-100 image-item" />
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md truncate-text" style="color: #73565e">
+                                    <strong>At My Worst</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white truncate-text">
+                                    <strong>Pink Sweat$</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-white">
+                                    <button type="button" class="btn btn-dark btn-floating btn-sm">
+                                        <i class="fas fa-user-friends"></i>
+                                    </button> <strong>2K</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="padding: 20 0; background: #457373;">
+</div>
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+<%- include('partials/footer.ejs') %>
+
