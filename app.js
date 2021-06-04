@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + 'public'));
-seedDB();
+// seedDB();
 
 app.use(require('express-session')({
     secret: 'secret is always secret.',
