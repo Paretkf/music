@@ -1,89 +1,99 @@
 <%- include('partials/h-user.ejs') %>
 
 <br>
-<i><h2>Top Thai</h2></i>
-<hr width="100%  size="50px" color="red" align="center">
-<!-- 
-<div class="container-total">
-  <div class="container-movies">
-    <h2>Ant-Man<br>Lançamento: 2015</h2>
-    <a href="/artist/music" >
-      <img src="https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Ant-Man">
+<% if(!currentUser) {%>
+  <h3>Top Arist</h3>
+<% } else { %> 
+<% if(currentUser.username != 'admin'){ %>
+  <h3>Top Arist</h3>
+<% } else { %>  
+  <h3>ARTIST
+    <a href='/admin/addArt'>
+        <i class="fa fa-plus-square"  aria-hidden="true"  >   
+        </i>
     </a>
-  </div>
-  
-    <div class="container-movies">
-      <h2>Ant-Man<br>Lançamento: 2015</h2>
-      <a href="/artist/music" >
-        <img src="https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Ant-Man">
-      </a>
-    </div> --> 
-<div class="artist">
-  <% collection.forEach(function(collection){ %>
+</h3>
+<% }%>
+
+<% } %>
+
+<div >
+<div class="artist" >
+  <% artist.forEach(function(artist){ %>
     <figure class="snip1281 yellow">
-      <img src="<%= collection.imageArt %>" alt="sample22" height="170px" width="500px"/>
+      <img src="<%= artist.imageArt %>" alt="sample22" height="170px" width="500px"/>
       <figcaption>
-        <h2><%= collection.artist %></h2>
+        <h2><%= artist.artist %></h2>
       </figcaption>
       <a href="/artist/music"></a>
     </figure>
   <% }); %>
-
-    <!-- <figure class="snip1281 blue">
-      <img src="https://www.songdee.com/wp-content/uploads/2021/02/%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%AD%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%A7%E0%B8%A3%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A3-INK-WARUNTORN-380x220.jpg" alt="sample69" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Bailey Wonger</h2><span>Artist</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1281 yellow">
-      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Gordon Norman</h2><span>Musician</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1281 red">
-      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Gordon Norman</h2><span>Musician</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-    <figure class="snip1281 yellow">
-      <img src="https://i.ytimg.com/vi/9IohfkrRymw/maxresdefault.jpg" alt="sample22" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Gordon Norman</h2><span>Musician</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1281 blue">
-      <img src="https://www.songdee.com/wp-content/uploads/2021/02/%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%AD%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%A7%E0%B8%A3%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A3-INK-WARUNTORN-380x220.jpg" alt="sample69" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Bailey Wonger</h2><span>Artist</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1281 yellow">
-      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Gordon Norman</h2><span>Musician</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1281 red">
-      <img src="https://trueid-ugc-prod.imgix.net/partner_files/trueidintrend/205662/cover_image/44928044-9833-4E60-A40B-95A9176495A1.png?auto=format" alt="sample22" height="170px" width="500px"/>
-      <figcaption>
-        <h2>Gordon Norman</h2><span>Musician</span>
-      </figcaption>
-      <a href="#"></a>
-    </figure> -->
 </div>
-
+</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+  h3 {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #CCC;
+  text-align: center;
+  text-shadow: 1px 1px 0 white, 2px 2px 0 rgb(25, 155, 90);
+  font-size: 3em;
+  font-style: italic;
+}
+</style>
 <%- include('partials/footer.ejs') %>

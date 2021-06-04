@@ -38,26 +38,90 @@
 // }
 
 // module.exports = seedDB;
+
 var mongoose    = require('mongoose');
-var Collection   = require('./models/collection');
+var Artist   = require('./models/artist');
 var data =[
+    // {   
+    //     artist      : 'Rstarboy 3',
+    //     imageArt    : 'https://cdn.vox-cdn.com/thumbor/QA7JD779ggaPNzCALqziuw60wis=/0x43:763x425/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22248294/richie_starboi_ultlrdkev.jpg',
+    //     music : [ {
+    //         artist : 'Rstarboy 3',
+    //         music : 'Dick',
+    //         imageMu : 'https://1.bp.blogspot.com/-5-rjAEPf93w/YI7GND1uLQI/AAAAAAAAGz8/pgRW5x10Hf0YuWZYwcwJv1x32hfRT9YKACLcBGAsYHQ/s0/StarBoi3-DICK.jpg',
+    //         mp3 : 'https://1.bp.blogspot.com/-5-rjAEPf93w/YI7GND1uLQI/AAAAAAAAGz8/pgRW5x10Hf0YuWZYwcwJv1x32hfRT9YKACLcBGAsYHQ/s0/StarBoi3-DICK.jpg',
+    //         melody : '1111111111111111111111111111111111111111111111111' 
+    //         }
+    //     ]
+    // }
+    
+    // },
     {
-        artist      : 'Three Man Down',
-        imageArt    : 'https://i.pinimg.com/236x/b5/f4/f4/b5f4f498a18f47a95ebcf1aa64cdc30f.jpg',
-        music       : 'ฝนตกไหม',
-        imageMu     : 'https://i.pinimg.com/564x/93/2f/c2/932fc260b9f112718153f2de9e0222db.jpg',
-        melody      : 'ฝนตกอีกแล้วคืนนี้ คงหนาวกว่าคืนไหนไหน ตัวฉันก็ใช้ชีวิตไป แค่ผ่านผ่านไป เท่านั้น เท่านั้น ก็คิดถึงเธออยากรู้ว่าเธอน่ะเป็นเช่นไร ตัวฉันก็เลยกดเบอร์โทรไป แบบไม่ตั้งใจ เท่านั้น เท่านั้น แค่อยากจะรู้ว่าตรงที่เธอยืนนั้นมีฝนตกไหม สบายดีไหม เธอกลัวฟ้าร้องหรือเปล่า ถ้าหากตรงนั้นไม่มีใคร ฉันพร้อม ฉันพร้อมจะไป ในคืนที่ฝนโปรยลงมา อากาศชื้นนะคืนนี้ระวังหนาวนะแบบนี้  ฉันกลัวเธอจะไม่สบาย ที่โทรมาหาเธอกดมาแบบไม่ได้ตั้งใจ ไม่ได้คิดอะไรแค่กลัวเธอไม่สบาย อะ (เท่านั้น) เท่านั้น แค่อยากจะรู้ว่าตรงที่เธอยืนนั้นมีฝนตกไหม สบายดีไหม เธอกลัวฟ้าร้องหรือเปล่า หากตรงนั้นไม่มีใคร ฉันพร้อม ฉันพร้อมจะไป แต่ฉันก็รู้ดีว่าข้างข้างเธอนั้นมีเขาใช่ไหมและ คนคนนั้น ดูแลเธอดีหรือเปล่าถ้าเธอยิ้มฉันก็ดีใจแค่ตรงนี้ ฉันไม่มีใคร ในคืนที่ฝนโปรยลงมา ฮู้ โฮ้โฮ เท่านั้น เท่านั้น แค่อยากจะรู้ว่าตรงที่เธอยืนนั้นมีฝนตกไหม สบายดีไหม เธอกลัวฟ้าร้องหรือเปล่า ถ้าหากตรงนั้นไม่มีใคร ฉันพร้อม ฉันพร้อมจะไป แต่ฉันก็รู้ดีว่าข้างข้างเธอนั้นมีเขาใช่ไหม และคนคนนั้น ดูแลเธอดีหรือเปล่า ถ้าเธอยิ้มฉันก็ดีใจ แค่ตรงนี้ฉันไม่มีใคร ในคืนที่ฝนโปรยลงมา ในคืนที่ฝนโปรยลงมา'
+        artist      : 'Justin Bieber',
+        imageArt    : 'https://mpics.mgronline.com/pics/Images/563000010160501.JPEG'
+    },
+    {
+        artist      : 'Doja Cat',
+        imageArt    : 'https://www.nme.com/wp-content/uploads/2020/09/GettyImages-1269775279.jpg'
+    },
+    {
+        artist      : 'BTS',
+        imageArt    : 'https://korism.com/_upload/news/2018/06/120174/15300991901.jpg'
+    },
+    {
+        artist      : 'Ariana Grande',
+        imageArt    : 'https://pbs.twimg.com/media/Ekv64WBUYAEnU8F.jpg'
+    },
+    {
+        artist      : 'Jawsh 685',
+        imageArt    : 'https://variety.com/wp-content/uploads/2020/10/jawsh-685-2_credit-connor-pritchard1.jpg?w=1000'
+    },
+    {
+        artist      : 'Finn Askew',
+        imageArt    : 'https://images.squarespace-cdn.com/content/v1/5dbe0ad1270af32a3472575f/1608402483638-JW77C7Y5I04VEFSHWFS2/ke17ZwdGBToddI8pDm48kCBllW3mxJGcM2njMWtAmMd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jAoOkRmPE63FUjiJOEKAz5U9gHNL46iYHU_few7p1U0Xt2TpVAeM6sT-baJRoygHA/finn+askew.jpg'
+    },
+    {
+        artist      : 'Shawn Mendes',
+        imageArt    : 'https://thestandard.co/wp-content/uploads/2020/11/in-wonder-shawn-mendes-netflix.jpg'
+    },
+    {
+        artist      : 'John K',
+        imageArt    : 'https://www.educatepark.com/wp-content/uploads/2019/10/if-we-never-met2.jpg'
+    },
+    {
+        artist      : 'Taylor Swift',
+        imageArt    : 'https://mpics.mgronline.com/pics/Images/559000011812401.JPEG'
+    },
+    {
+        artist      : 'Bruno Mars',
+        imageArt    : 'https://dudeplace.co/wp-content/uploads/2018/09/brunomars.jpg'
+    },
+    {
+        artist      : 'Giveon',
+        imageArt    : 'https://hips.hearstapps.com/vidthumb/images/2020-elle-songassociation-ep-giveon-tj-v1-ap-v2-fb-1607108053.jpg'
+    },
+    {
+        artist      : 'Pink Sweat$',
+        imageArt    : 'https://s.isanook.com/jo/0/rp/rc/w850h510/yacxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2pvLzAvdWQvNDgzLzI0MTkyNDEvcGlua3N3ZWF0c3NuLmpwZw==.jpg'
+    },
+    {
+        artist      : 'The Weeknd',
+        imageArt    : 'https://cms.thaiticketmajor.com/imgUpload/imgeditor/02-the-weeknd-press-2019-cr-Nabil-Elderkin-billboard-1548-compressed.jpg'
+    },
+    {
+        artist      : 'Lil Nas X',
+        imageArt    : 'https://media.pitchfork.com/photos/60a6c4dd397206388541742f/2:1/w_2560%2Cc_limit/Lil-Nas-X.jpg'
     }
 ];
 
 function seedDB(){
-    Collection.remove({}, function(err){
+    Artist.remove({}, function(err){
         if(err){
             console.log(err);
         }
         console.log('remove DB completed');
         data.forEach(function(seed){
-            Collection.create(seed, function(err, collection){
+            Artist.create(seed, function(err, artist){
                 if(err){
                     console.log(err);
                 } else {
@@ -69,3 +133,100 @@ function seedDB(){
 }
 
 module.exports = seedDB;
+
+// var mongoose    = require('mongoose');
+// var Home      = require('./models/home');
+// var data =[
+//     {
+//         no: "1",
+//         artist: "Justin Bieber, Daniel Caesar, Giveon",
+//         music: "Peaches",
+//         imageMu:"http://localhost:3000/images/home1.jpg"
+//     },
+//     {
+//         no: "3",
+//         artist: "ROSÉ",
+//         music: "Gone",
+//         imageMu:"https://image.joox.com/JOOXcover/0/da1cab73156e1afe/300"
+//     },
+//     {
+//         no: "5",
+//         artist: "BTS",
+//         music: "Dynamite",
+//         imageMu:"https://image.joox.com/JOOXcover/0/03a5b7f0c9f69ae6/300"
+//     },
+//     {
+//         no: "7",
+//         artist: "Jawsh 685, Jason Derulo, BTS",
+//         music: "Savage Love ",
+//         imageMu:"https://image.joox.com/JOOXcover/0/b80e0a8bb5eeccfb/300"
+//     },
+//     {
+//         no: "9",
+//         artist: "Shawn Mendes",
+//         music: "Monster",
+//         imageMu:"https://image.joox.com/JOOXcover/0/adc24a2f40533407/300"
+//     },
+//     {
+//         no: "11",
+//         artist: "Taylor Swift",
+//         music: "willow",
+//         imageMu:"https://image.joox.com/JOOXcover/0/9cd766a9bed3f3aa/300"
+//     },
+//     {
+//         no: "2",
+//         artist: "ROSÉ",
+//         music: "On The Ground",
+//         imageMu:"https://image.joox.com/JOOXcover/0/da1cab73156e1afe/300"
+//     },
+//     {
+//         no: "4",
+//         artist: "Doja Cat",
+//         music: "Kiss Me More",
+//         imageMu:"https://image.joox.com/JOOXcover/0/09e602de6fbc09af/300"
+//     },
+//     {
+//         no: "6",
+//         artist: "Ariana Grande",
+//         music: "34+35",
+//         imageMu:"https://image.joox.com/JOOXcover/0/51dd6f3aa524074e/300"
+//     },
+//     {
+//         no: "8",
+//         artist: "Finn Askew",
+//         music: "Roses",
+//         imageMu:"https://image.joox.com/JOOXcover/0/84890e51e2f30c29/300"
+//     },
+//     {
+//         no: "10",
+//         artist: "John K",
+//         music: "parachute",
+//         imageMu:"https://image.joox.com/JOOXcover/0/bda136ffd1f4425b/300"
+//     },
+//     {
+//         no: "12",
+//         artist: "Ariana Grande",
+//         music: "positions",
+//         imageMu:"https://image.joox.com/JOOXcover/0/51dd6f3aa524074e/300"
+//     }
+// ];
+
+// function seedDB(){
+//     Home.remove({}, function(err){
+//         if(err){
+//             console.log(err);
+//         }
+//         console.log('remove DB completed');
+//         data.forEach(function(seed){
+//             Home.create(seed, function(err, home){
+//                 if(err){
+//                     console.log(err);
+//                 } else {
+//                     console.log('new data add');
+//                 }
+//             });
+//         });
+//     });
+// }
+
+// module.exports = seedDB;

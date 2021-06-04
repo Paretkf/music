@@ -1,0 +1,28 @@
+<%- include('partials/h-user.ejs') %>
+
+<div class="container" style="width:35%;margin:25px auto;">
+    <h3 style="text-align: center;">Add Artist</h3>
+    <form action='/admin/addArt' method="POST" enctype='multipart/form-data'>
+    
+        <div class="form-group">
+            <label for="edutarotName" style="float: left;">Artist name</label>
+            <input type="text" class="form-control" name="artist[artist]" placeholder="artist name">
+        </div> <br>
+        <div class="form-group">
+            <label for="edutarotName" style="float: left;">Image</label>
+            <input type="text" class="form-control" name="artist[imageArt]" placeholder="image">
+        </div>
+        <!-- <div class="form-group">
+            <label for="edutarotImageUpload" style="float: left;">Image</label>
+            <input type="file" class="form-control" name="image" accept="image/*">
+        </div> -->
+        <br>
+        <button type="submit" class="btn btn-outline-primary" style="float: center;">Add Artist</button>
+        <!-- <button type="submit" class="btn btn-outline-primary" style="float: center;" a href='/admin'>Go back</button> -->
+        <a href='/artist'>GO back</a>
+  </form>
+</div>  
+  
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<%- include('partials/footer.ejs') %>
