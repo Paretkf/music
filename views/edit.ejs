@@ -1,4 +1,4 @@
-%- include('partials/h-user.ejs') %>
+<%- include('partials/h-user.ejs') %>
 
 <div class="container" style="width:35%;margin:25px auto;">
     <h3 style="text-align: center;">Add Artist</h3>
@@ -11,11 +11,11 @@
         
         <div class="form-group">
             <label class="from-label">Image</label>
-            <img src='<%= artist.image %>' height="50%" width="50%">
+            <img src='<%= artist.image %>' height="15%" width="40%"> <br>
             <input type="file" class="form-control" name="image" accept="image/*">
         </div>
         <br>
-        <button type="submit" class="btn btn-outline-primary" style="float: center;">Add Artist</button>
+        <button type="submit" class="btn btn-outline-primary" style="float: center;">Edit Artist</button>
      
         <a href='/artist'>GO back</a>
   </form>

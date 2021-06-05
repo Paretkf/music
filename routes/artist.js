@@ -45,17 +45,18 @@ router.post('/', upload.single('image'), function(req, res){
     });
 });    
 
-//ไปหน้าแก้ไขของแต่ละอัน
-router.get('/:id', function(req, res){
-    Artist.findById(req.params.id, function(err, foundArtist){
-        if(err){
-            console.log(err);
-        } else{
-            res.render('edit.ejs', {artist: allArtist});
-        }
-    });
-});
 
+// router.get('/:id', function(req, res){
+//     Artist.findById(req.params.id, function(err, foundArtist){
+//         if(err){
+//             console.log(err);
+//         } else{
+//             res.render('edit.ejs', {artist: allArtist});
+//         }
+//     });
+// });
+
+//ไปหน้าแก้ไขของแต่ละอัน
 router.get('/:id/edit', function(req, res){
     Artist.findById(req.params.id, function(err, foundArtist){
         if(err){
