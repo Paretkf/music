@@ -8,6 +8,7 @@ const   express         = require('express'),
         User            = require('./models/user'),
         Slide           = require('./models/slide'),
         Artist          = require('./models/artist'),
+        methodOverride  = require('method-override'),
         // Music           = require('./models/music'),
         Home            = require('./models/home'),
         Schema          = mongoose.Schema;
@@ -20,9 +21,9 @@ var indexRoutes     = require('./routes/index'),
 
 mongoose.connect('mongodb://localhost/uCollectionV3');
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('public'));
+app.use(express.static('./public'));
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + 'public'));
+app.use(methodOverride('_method'));
 // seedDB();
 
 app.use(require('express-session')({
@@ -48,6 +49,6 @@ app.use('/artist/music',  musicRoutes );
 app.use('/admin',adminRoutes);
 
 
-app.listen('3000', function(req, res){
+app.listen('4000', function(req, res){
     console.log('Server is running');
 });

@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var artistSchema = new mongoose.Schema({
-    artist      : String,
-    imageArt    : String,
+    name      : String,
+    image     : String,
     music: [
         {
             type: mongoose.Schema.Types.ObjectId,

@@ -4,7 +4,7 @@ var homeSchema = new mongoose.Schema({
     no: String,
     artist: String,
     music: String,
-    imageMu: String
+    image: String
 });
 
 module.exports = mongoose.model('Home', homeSchema);

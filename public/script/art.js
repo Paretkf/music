@@ -9,3 +9,4 @@ var favIcon = document.querySelector('.trash')
 function handletrash() {
 favIcon.classList.toggle('active');
 }
+

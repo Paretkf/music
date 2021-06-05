@@ -5,15 +5,18 @@
   <input id="searchField" type="text" name="search" value="" placeholder="search...">
 </nav>
 <div class="page-wrapper">
+
+  <% User.forEach(function(User){ %>
   <div class="profile-box">
     <img src="https://placeimg.com/200/200/any" alt="profile pic">
-    <h4>Leora D. Harrison</h4>
-    <h5>leora@ac.io</h5>
+    <h4><%= user.username%></h4>
+    <!-- <h5><%= user.email %></h5> -->
     <div class="btn-container">
       <span class="profile-btn" id="assign"><i class="far fa-clipboard"></i></i>Information</span>
       <span class="profile-btn" id="view"><i class="fa fa-ban" aria-hidden="true"></i>Block</span>
     </div>
-  </div>  
+  </div>
+  <% }); %> 
 </div>
 
 <!-- MDB -->

@@ -10,6 +10,30 @@ var express     = require('express'),
 //     res.render('artist.ejs');
 // });
 
+// router.get('/:id/edit', function(req, res){
+//     Artist.findById(req.params.id, function(err, foundArtist){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             res.render('artist/edit.ejs', {artist: foundArtist})
+//         }
+//     });
+// });
+
+// router.put('/:id', upload.single('image'), function(req, res){
+//     if(req.file){
+//         req.body.artist.image = '/uploads/'+ req.file.filename;
+//     }
+//     Artist.findByIdAndUpdate(req.params.id, req.body.artist, function(err, updatedArtist){
+//         if(err){
+//             res.redirect('/artist/');
+//         } else {
+//             res.redirect('/artist/'+req.params.id);
+//         }
+//     });
+// });
+
+
 router.get('/show', function(req, res){
     res.render('show.ejs'); 
 });
@@ -33,29 +57,37 @@ router.post('/addArt', function(req, res){
     });
 });
 
-// router.get('/addArt', function(req, res){
-//     Artist.findById({}, function(err, foundArtist){
+// router.get('/addMu', function(req, res){
+//     Artist.findById(req.params.id, function(err, foundArtist){
 //         if(err){
 //             console.log(err);
-//         } else{
-//             res.render('addArt.ejs', {artist: allArtist});
+//         } else {
+//             res.render("addMu.ejs", {artist: foundArtist});
+//         }
+//     });    
+// });
+
+// router.post('/',  function(req, res){
+//     Artist.findById(req.params.id, function(err, foundArtist){
+//         if(err){
+//             console.log(err);
+//             res.redirect('/artist');
+//         } else {
+//             Music.create(req.body.music, function(err, music){
+//                 if(err) {
+//                     console.log(err);
+//                 } else {
+//                     music.author.id = req.user._id;
+//                     music.save();
+//                     foundArtist.music.push(music);
+//                     foundArtist.save();
+//                     res.redirect('/artist/'+ foundArtist._id);
+//                 }
+//             });
 //         }
 //     });
 // });
 
-// router.post('/', function(req, res){
-//     Artist.findById(req.params.id, function(err, music){
-//         if(err){
-//             console.log(err);
-//         } else {
-//             music.author.id = req.user._id;
-//             music.save();
-//             foundArtist.music.push(music);
-//             foundArtist.save();
-//             res.redirect('/');
-//         }
-//     });
-// });
 
 // router.get('/addMu', function(req, res){
 //    Music.find({}, function(err, allMusic){

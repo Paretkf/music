@@ -4,8 +4,36 @@ var express     = require('express'),
     User        = require('../models/user'),
     Home        = require('../models/home'),
     passport    = require('passport');
+    path        = require('path'),
+    multer      = require('multer'),
+    storage     = multer.diskStorage({
+                destination: function(req, file, callback){
+                    callback(null,'./public/uploads/');
+                },
+                filename: function(req, file, callback){
+                    callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+                }
+            }),
+
+    imageFilter = function (req, file, callback){
+        if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+            return callback(new Error('Only JPG, jpeg, PNGm and GIF image files are allowed!'), false);
+        }
+        callback(null, true);
+    },
+    upload  = multer({storage: storage, fileFilter: imageFilter}),        
+    Home  = require('../models/home');
 
 
+// router.get('/', function(req, res){
+//     Artist.find({}, function(err, allArtist){
+//         if(err){
+//             console.log(err);
+//         } else{
+//             res.render('artist.ejs', {artist: allArtist});
+//         }
+//     });
+// });
 
 router.get('/', function(req, res){
     Slide.find({}, function(err, allSlide){
@@ -23,8 +51,23 @@ router.get('/', function(req, res){
     });
 });
 
-router.post('/', function(req, res){
-});
+
+router.post('/', upload.single('image'), function(req, res){
+    req.body.home.image = '/uploads/'+ req.file.filename;
+    
+    Home.create(req.body.artist, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            res.redirect('/home');
+        }
+    });
+});    
+
+
+
+// router.post('/', function(req, res){
+// });
 
 
 router.get('/contact', function(req, res){

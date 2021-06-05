@@ -68,31 +68,12 @@ figure.snip1281 a {
   position: absolute;
   z-index: 1;
 }
-figure.snip1281.blue:after {
-  background-color: #2980b9;
-}
-figure.snip1281.blue span {
-  color: #409ad5;
-}
-figure.snip1281.red:after {
-  background-color: #c0392b;
-}
-figure.snip1281.red span {
-  color: #d65548;
-}
+
 figure.snip1281.yellow:after {
   background-color: #f39c12;
 }
-figure.snip1281.yellow span {
-  color: #f5b043;
-}
-figure.snip1281.green:after {
-  background-color: #27ae60;
-}
-figure.snip1281.green span {
-  color: #36d278;
-}
-figure.snip1281:hover img,
+
+/* figure.snip1281:hover img,
 figure.snip1281.hover img {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
@@ -100,7 +81,7 @@ figure.snip1281.hover img {
 figure.snip1281:hover:after,
 figure.snip1281.hover:after {
   width: 100%;
-}
+} */
 
 h3 {
   position: relative;

@@ -43,75 +43,64 @@ var mongoose    = require('mongoose');
 var Artist   = require('./models/artist');
 var data =[
     {   
-        artist      : 'Rstarboy 3',
-        imageArt    : 'https://cdn.vox-cdn.com/thumbor/QA7JD779ggaPNzCALqziuw60wis=/0x43:763x425/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22248294/richie_starboi_ultlrdkev.jpg'}
-  //     music : [ {
-    //         artist : 'Rstarboy 3',
-    //         music : 'Dick',
-    //         imageMu : 'https://1.bp.blogspot.com/-5-rjAEPf93w/YI7GND1uLQI/AAAAAAAAGz8/pgRW5x10Hf0YuWZYwcwJv1x32hfRT9YKACLcBGAsYHQ/s0/StarBoi3-DICK.jpg',
-    //         mp3 : 'https://1.bp.blogspot.com/-5-rjAEPf93w/YI7GND1uLQI/AAAAAAAAGz8/pgRW5x10Hf0YuWZYwcwJv1x32hfRT9YKACLcBGAsYHQ/s0/StarBoi3-DICK.jpg',
-    //         melody : '1111111111111111111111111111111111111111111111111' 
-    //         }
-    //     ]
-    // }
-    
-    // }  ,
-    // {
-    //     artist      : 'Justin Bieber',
-    //     imageArt    : 'https://mpics.mgronline.com/pics/Images/563000010160501.JPEG'
-    // },
-    // {
-    //     artist      : 'Doja Cat',
-    //     imageArt    : 'https://www.nme.com/wp-content/uploads/2020/09/GettyImages-1269775279.jpg'
-    // },
-    // {
-    //     artist      : 'BTS',
-    //     imageArt    : 'https://korism.com/_upload/news/2018/06/120174/15300991901.jpg'
-    // },
-    // {
-    //     artist      : 'Ariana Grande',
-    //     imageArt    : 'https://pbs.twimg.com/media/Ekv64WBUYAEnU8F.jpg'
-    // },
-    // {
-    //     artist      : 'Jawsh 685',
-    //     imageArt    : 'https://variety.com/wp-content/uploads/2020/10/jawsh-685-2_credit-connor-pritchard1.jpg?w=1000'
-    // },
-    // {
-    //     artist      : 'Finn Askew',
-    //     imageArt    : 'https://images.squarespace-cdn.com/content/v1/5dbe0ad1270af32a3472575f/1608402483638-JW77C7Y5I04VEFSHWFS2/ke17ZwdGBToddI8pDm48kCBllW3mxJGcM2njMWtAmMd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jAoOkRmPE63FUjiJOEKAz5U9gHNL46iYHU_few7p1U0Xt2TpVAeM6sT-baJRoygHA/finn+askew.jpg'
-    // },
-    // {
-    //     artist      : 'Shawn Mendes',
-    //     imageArt    : 'https://thestandard.co/wp-content/uploads/2020/11/in-wonder-shawn-mendes-netflix.jpg'
-    // },
-    // {
-    //     artist      : 'John K',
-    //     imageArt    : 'https://www.educatepark.com/wp-content/uploads/2019/10/if-we-never-met2.jpg'
-    // },
-    // {
-    //     artist      : 'Taylor Swift',
-    //     imageArt    : 'https://mpics.mgronline.com/pics/Images/559000011812401.JPEG'
-    // },
-    // {
-    //     artist      : 'Bruno Mars',
-    //     imageArt    : 'https://dudeplace.co/wp-content/uploads/2018/09/brunomars.jpg'
-    // },
-    // {
-    //     artist      : 'Giveon',
-    //     imageArt    : 'https://hips.hearstapps.com/vidthumb/images/2020-elle-songassociation-ep-giveon-tj-v1-ap-v2-fb-1607108053.jpg'
-    // },
-    // {
-    //     artist      : 'Pink Sweat$',
-    //     imageArt    : 'https://s.isanook.com/jo/0/rp/rc/w850h510/yacxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2pvLzAvdWQvNDgzLzI0MTkyNDEvcGlua3N3ZWF0c3NuLmpwZw==.jpg'
-    // },
-    // {
-    //     artist      : 'The Weeknd',
-    //     imageArt    : 'https://cms.thaiticketmajor.com/imgUpload/imgeditor/02-the-weeknd-press-2019-cr-Nabil-Elderkin-billboard-1548-compressed.jpg'
-    // },
-    // {
-    //     artist      : 'Lil Nas X',
-    //     imageArt    : 'https://media.pitchfork.com/photos/60a6c4dd397206388541742f/2:1/w_2560%2Cc_limit/Lil-Nas-X.jpg'
-    // }
+        name      : 'Rstarboy 3',
+        image     : 'https://cdn.vox-cdn.com/thumbor/QA7JD779ggaPNzCALqziuw60wis=/0x43:763x425/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22248294/richie_starboi_ultlrdkev.jpg'},
+    {
+        name     : 'Justin Bieber',
+        image    : 'https://mpics.mgronline.com/pics/Images/563000010160501.JPEG'
+    },
+    {
+        name      : 'Doja Cat',
+        image    : 'https://www.nme.com/wp-content/uploads/2020/09/GettyImages-1269775279.jpg'
+    },
+    {
+        name      : 'BTS',
+        image   : 'https://korism.com/_upload/news/2018/06/120174/15300991901.jpg'
+    },
+    {
+        name      : 'Ariana Grande',
+        image    : 'https://pbs.twimg.com/media/Ekv64WBUYAEnU8F.jpg'
+    },
+    {
+        name     : 'Jawsh 685',
+        image    : 'https://variety.com/wp-content/uploads/2020/10/jawsh-685-2_credit-connor-pritchard1.jpg?w=1000'
+    },
+    {
+        name     : 'Finn Askew',
+        image    : 'https://images.squarespace-cdn.com/content/v1/5dbe0ad1270af32a3472575f/1608402483638-JW77C7Y5I04VEFSHWFS2/ke17ZwdGBToddI8pDm48kCBllW3mxJGcM2njMWtAmMd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jAoOkRmPE63FUjiJOEKAz5U9gHNL46iYHU_few7p1U0Xt2TpVAeM6sT-baJRoygHA/finn+askew.jpg'
+    },
+    {
+        name      : 'Shawn Mendes',
+        image    : 'https://thestandard.co/wp-content/uploads/2020/11/in-wonder-shawn-mendes-netflix.jpg'
+    },
+    {
+        name     : 'John K',
+        image    : 'https://www.educatepark.com/wp-content/uploads/2019/10/if-we-never-met2.jpg'
+    },
+    {
+        name      : 'Taylor Swift',
+        image    : 'https://mpics.mgronline.com/pics/Images/559000011812401.JPEG'
+    },
+    {
+        name     : 'Bruno Mars',
+        image    : 'https://dudeplace.co/wp-content/uploads/2018/09/brunomars.jpg'
+    },
+    {
+        name     : 'Giveon',
+        image    : 'https://hips.hearstapps.com/vidthumb/images/2020-elle-songassociation-ep-giveon-tj-v1-ap-v2-fb-1607108053.jpg'
+    },
+    {
+        name     : 'Pink Sweat$',
+        image    : 'https://s.isanook.com/jo/0/rp/rc/w850h510/yacxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2pvLzAvdWQvNDgzLzI0MTkyNDEvcGlua3N3ZWF0c3NuLmpwZw==.jpg'
+    },
+    {
+        name      : 'The Weeknd',
+        image   : 'https://cms.thaiticketmajor.com/imgUpload/imgeditor/02-the-weeknd-press-2019-cr-Nabil-Elderkin-billboard-1548-compressed.jpg'
+    },
+    {
+        name      : 'Lil Nas X',
+        image    : 'https://media.pitchfork.com/photos/60a6c4dd397206388541742f/2:1/w_2560%2Cc_limit/Lil-Nas-X.jpg'
+    }
 ];
 
 function seedDB(){
