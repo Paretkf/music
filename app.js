@@ -49,6 +49,6 @@ app.use('/artist/music',  musicRoutes );
 app.use('/admin',adminRoutes);
 
 
-app.listen('4000', function(req, res){
+app.listen('3000', function(req, res){
     console.log('Server is running');
 });

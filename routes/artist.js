@@ -90,7 +90,7 @@ router.get('/:id/music', function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("music.ejs");
+            res.render("music.ejs"); 
         }
     });
 });
