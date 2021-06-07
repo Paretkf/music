@@ -25,16 +25,6 @@ var express     = require('express'),
     Home  = require('../models/home');
 
 
-// router.get('/', function(req, res){
-//     Artist.find({}, function(err, allArtist){
-//         if(err){
-//             console.log(err);
-//         } else{
-//             res.render('artist.ejs', {artist: allArtist});
-//         }
-//     });
-// });
-
 router.get('/', function(req, res){
     Slide.find({}, function(err, allSlide){
         if(err){
@@ -51,6 +41,15 @@ router.get('/', function(req, res){
     });
 });
 
+router.get('/', function(req, res){
+    Home.find({}, function(err, allHome){
+        if(err){
+            console.log(err);
+        } else{
+            res.render('home.ejs', {home: allHome});
+        }
+    });
+});
 
 router.post('/', upload.single('image'), function(req, res){
     req.body.home.image = '/uploads/'+ req.file.filename;

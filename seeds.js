@@ -40,77 +40,30 @@
 // module.exports = seedDB;
 
 var mongoose    = require('mongoose');
-var Artist   = require('./models/artist');
+var Music   = require('./models/music');
 var data =[
     {   
-        name      : 'Rstarboy 3',
-        image     : 'https://cdn.vox-cdn.com/thumbor/QA7JD779ggaPNzCALqziuw60wis=/0x43:763x425/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22248294/richie_starboi_ultlrdkev.jpg'},
-    {
-        name     : 'Justin Bieber',
-        image    : 'https://mpics.mgronline.com/pics/Images/563000010160501.JPEG'
+        artist: "Justin Bieber",
+        music: "Peaches",
+        imageMu: "http://localhost:3000/images/home1.jpg",
+        mp3: "http://localhost:3000/images/home1.jpg",
+        melody: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     },
-    {
-        name      : 'Doja Cat',
-        image    : 'https://www.nme.com/wp-content/uploads/2020/09/GettyImages-1269775279.jpg'
-    },
-    {
-        name      : 'BTS',
-        image   : 'https://korism.com/_upload/news/2018/06/120174/15300991901.jpg'
-    },
-    {
-        name      : 'Ariana Grande',
-        image    : 'https://pbs.twimg.com/media/Ekv64WBUYAEnU8F.jpg'
-    },
-    {
-        name     : 'Jawsh 685',
-        image    : 'https://variety.com/wp-content/uploads/2020/10/jawsh-685-2_credit-connor-pritchard1.jpg?w=1000'
-    },
-    {
-        name     : 'Finn Askew',
-        image    : 'https://images.squarespace-cdn.com/content/v1/5dbe0ad1270af32a3472575f/1608402483638-JW77C7Y5I04VEFSHWFS2/ke17ZwdGBToddI8pDm48kCBllW3mxJGcM2njMWtAmMd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jAoOkRmPE63FUjiJOEKAz5U9gHNL46iYHU_few7p1U0Xt2TpVAeM6sT-baJRoygHA/finn+askew.jpg'
-    },
-    {
-        name      : 'Shawn Mendes',
-        image    : 'https://thestandard.co/wp-content/uploads/2020/11/in-wonder-shawn-mendes-netflix.jpg'
-    },
-    {
-        name     : 'John K',
-        image    : 'https://www.educatepark.com/wp-content/uploads/2019/10/if-we-never-met2.jpg'
-    },
-    {
-        name      : 'Taylor Swift',
-        image    : 'https://mpics.mgronline.com/pics/Images/559000011812401.JPEG'
-    },
-    {
-        name     : 'Bruno Mars',
-        image    : 'https://dudeplace.co/wp-content/uploads/2018/09/brunomars.jpg'
-    },
-    {
-        name     : 'Giveon',
-        image    : 'https://hips.hearstapps.com/vidthumb/images/2020-elle-songassociation-ep-giveon-tj-v1-ap-v2-fb-1607108053.jpg'
-    },
-    {
-        name     : 'Pink Sweat$',
-        image    : 'https://s.isanook.com/jo/0/rp/rc/w850h510/yacxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2pvLzAvdWQvNDgzLzI0MTkyNDEvcGlua3N3ZWF0c3NuLmpwZw==.jpg'
-    },
-    {
-        name      : 'The Weeknd',
-        image   : 'https://cms.thaiticketmajor.com/imgUpload/imgeditor/02-the-weeknd-press-2019-cr-Nabil-Elderkin-billboard-1548-compressed.jpg'
-    },
-    {
-        name      : 'Lil Nas X',
-        image    : 'https://media.pitchfork.com/photos/60a6c4dd397206388541742f/2:1/w_2560%2Cc_limit/Lil-Nas-X.jpg'
-    }
+    {artist: "ROSÉ",
+    music: "Gone",
+    imageMu: "https://image.joox.com/JOOXcover/0/da1cab73156e1afe/300",
+    mp3: "https://image.joox.com/JOOXcover/0/da1cab73156e1afe/300",
+    melody: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
 ];
 
 function seedDB(){
-    Artist.remove({}, function(err){
+    Music.remove({}, function(err){
         if(err){
             console.log(err);
         }
         console.log('remove DB completed');
         data.forEach(function(seed){
-            Artist.create(seed, function(err, artist){
+            Music.create(seed, function(err, artist){
                 if(err){
                     console.log(err);
                 } else {

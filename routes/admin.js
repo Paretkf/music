@@ -4,34 +4,7 @@ var express     = require('express'),
     Artist      = require('../models/artist'),
     Music      = require('../models/music'),
     passport    = require('passport');
-
-
-// router.get('/', function(req, res){
-//     res.render('artist.ejs');
-// });
-
-// router.get('/:id/edit', function(req, res){
-//     Artist.findById(req.params.id, function(err, foundArtist){
-//         if(err){
-//             console.log(err);
-//         } else {
-//             res.render('artist/edit.ejs', {artist: foundArtist})
-//         }
-//     });
-// });
-
-// router.put('/:id', upload.single('image'), function(req, res){
-//     if(req.file){
-//         req.body.artist.image = '/uploads/'+ req.file.filename;
-//     }
-//     Artist.findByIdAndUpdate(req.params.id, req.body.artist, function(err, updatedArtist){
-//         if(err){
-//             res.redirect('/artist/');
-//         } else {
-//             res.redirect('/artist/'+req.params.id);
-//         }
-//     });
-// });
+    
 
 
 router.get('/show', function(req, res){

@@ -9,7 +9,7 @@ const   express         = require('express'),
         Slide           = require('./models/slide'),
         Artist          = require('./models/artist'),
         methodOverride  = require('method-override'),
-        // Music           = require('./models/music'),
+        Music           = require('./models/music'),
         Home            = require('./models/home'),
         Schema          = mongoose.Schema;
 

@@ -22,7 +22,6 @@
 <div style="padding: 20 0; background: #729086;">
     <h4 class="text-center text-white">ชาร์ตเพลงฮิต</h4>
     <p class="text-center text-white">เช็คอันดับเพลงฮิตประจำสัปดาห์ได้ก่อนใคร ดาวน์โหลดเพลงฮิตจากชาร์ตเพลง The Ciambella Top 20 อัพเดทเพลงใหม่</p>
-    
 </div>
 
 <div style="background-image: url('./images/background.jpg');">
@@ -40,6 +39,7 @@
             </div>
   
             
+            
             <div class="col-md-5">
                 <% home.forEach(function(home){ %>
                 <div class="row">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
-                            <img src="<%= home.imageMu %>" class="img-fluid w-100 image-item" />
+                            <img src="<%= home.image %>" class="img-fluid w-100 image-item" />
                         </div>
                         
                     </div>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md text-white">
-                                <strong><%= home.artist %></strong>
+                                <strong><%= home.name %></strong>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
             </div>
 
 
-            <div class="col-md-5">
+            <!-- <div class="col-md-5">
                 <% home.forEach(function(home){ %>
                 <div class="row">
                     <div class="col-md-2 align-self-center">
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <% }); %> 
-            </div>
+            </div> -->
             
             
         </div>

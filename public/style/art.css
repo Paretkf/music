@@ -73,7 +73,7 @@ figure.snip1281.yellow:after {
   background-color: #f39c12;
 }
 
-/* figure.snip1281:hover img,
+figure.snip1281:hover img,
 figure.snip1281.hover img {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
@@ -81,7 +81,7 @@ figure.snip1281.hover img {
 figure.snip1281:hover:after,
 figure.snip1281.hover:after {
   width: 100%;
-} */
+}
 
 h3 {
   position: relative;

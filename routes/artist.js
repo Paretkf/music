@@ -4,6 +4,7 @@ var express     = require('express'),
     multer      = require('multer'),
     passport    = require('passport'),
     path        = require('path'),
+    middleware = require('../middleware'),
     storage     = multer.diskStorage({
                 destination: function(req, file, callback){
                     callback(null,'./public/uploads/');
@@ -46,17 +47,7 @@ router.post('/', upload.single('image'), function(req, res){
 });    
 
 
-// router.get('/:id', function(req, res){
-//     Artist.findById(req.params.id, function(err, foundArtist){
-//         if(err){
-//             console.log(err);
-//         } else{
-//             res.render('edit.ejs', {artist: allArtist});
-//         }
-//     });
-// });
-
-//ไปหน้าแก้ไขของแต่ละอัน
+//ไปหน้าแก้ไขของแต่ละอันของศิลปิน
 router.get('/:id/edit', function(req, res){
     Artist.findById(req.params.id, function(err, foundArtist){
         if(err){
@@ -75,24 +66,36 @@ router.put('/:id', upload.single('image'), function(req, res){
         if(err){
             res.redirect('/artist/');
         } else {
-            res.redirect('/artist/'+req.params.id);
+            res.redirect('/artist/');
         }
     });
 });
 
-// router.get('/:id/artist', function(req, res){
-//     Artist.findById(req.params.id).populate('music').exec(function(err, foundArtist){
-//         if(err){
-//             console.log(err);
-//         } else {
-//             res.render("music.ejs", {artist: foundArtist});
-//         }
-//     });
-// });
+//ลบข้อมูลในศิลปิน
+router.delete('/:id', function(req, res){
+    Artist.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            console.log(err);
+            res.redirect('/artist/');
+        } else {
+            res.redirect('/artist/');
+        }
+    });
+});
 
-// router.post('/:id', function(req, res){
-    
-// });
+
+//ไปเพลงของแต่ละศิลปิน
+router.get('/:id/music', function(req, res){
+    Artist.findById(req.params.id).populate('music').exec(function(err, foundArtist){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("music.ejs");
+        }
+    });
+});
+
+
 
 
 router.get('/logout', function(req, res){

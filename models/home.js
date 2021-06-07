@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var homeSchema = new mongoose.Schema({
     no: String,
-    artist: String,
+    name: String,
     music: String,
     image: String
 });
